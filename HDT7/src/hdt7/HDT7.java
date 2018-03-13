@@ -5,6 +5,8 @@
  */
 package hdt7;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JUMPSTONIK
@@ -16,6 +18,12 @@ public class HDT7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Association<String,String>> Diccionario;
+        Diccionario = new ArrayList<Association<String,String>>();
+        
+        
+        
+        
     }
     
 }
