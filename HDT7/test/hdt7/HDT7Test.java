@@ -3,25 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package hdt7;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
- * este es el programa con la traduccion dela oracion dada
- * @author Josue(JUMPSTONIK) David Lopez 17081
- * @author Sergio Alejandro Gordillo 16387
- * fecha:19/03/2018
+ *
+ * @author JUMPSTONIK
  */
-public class HDT7 {
+public class HDT7Test {
+    
+    public HDT7Test() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
 
     /**
-     * @param args the command line arguments
+     * Test of main method, of class HDT7.
      */
-    public static void main(String[] args) {
-        
+    @Test
+    public void testMain() {
+        String respues = "*i* *am* *doing* *the* tarea*in* *my* casa ";
         BinarySearchTree bst = new BinarySearchTree();
         String[] palabrasOracion;
         ArrayList<String> listaLineas = new ArrayList<String>();
@@ -76,20 +101,14 @@ public class HDT7 {
         
         for (int i = 0; i < listaLineas.size()-1; i=i+2) {
             bst.insert(new Association<String,String>(listaLineas.get(i), listaLineas.get(i+1)));
-            System.out.println("////");
+            //System.out.println("////");
         }
         
-       bst.display(bst.root);
-        System.out.println("");
         
         for (int i = 0; i < palabrasOracion.length; i++) {
             traduccion = traduccion + bst.find(palabrasOracion[i]);
         }
-        
-        System.out.println(traduccion);
-        
-        
-        
+        assertEquals(respues,traduccion,0.0);
     }
     
 }
